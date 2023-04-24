@@ -1,9 +1,9 @@
 package com.example.restaurant_service.configuration.customAnnotations.validator;
 
-import com.baba.foods.food_service.configuration.customAnnotations.NotEmptyOrNull;
+import com.example.restaurant_service.configuration.customAnnotations.NotEmptyOrNull;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
 import java.util.List;
 
 public class NotEmptyOrNullValidator implements ConstraintValidator<NotEmptyOrNull, String> {

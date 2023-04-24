@@ -1,10 +1,9 @@
 package com.example.restaurant_service.configuration.customAnnotations.validator;
 
 
-import com.baba.foods.food_service.configuration.customAnnotations.NonZero;
-
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import com.example.restaurant_service.configuration.customAnnotations.NonZero;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 public class NonZeroValidator implements ConstraintValidator<NonZero, Integer> {
     @Override

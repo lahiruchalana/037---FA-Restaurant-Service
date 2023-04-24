@@ -1,9 +1,8 @@
 package com.example.restaurant_service.configuration.customAnnotations.validator;
 
-import com.baba.foods.food_service.configuration.customAnnotations.NonNegative;
-
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import com.example.restaurant_service.configuration.customAnnotations.NonNegative;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 public class NonNegativeValidator implements ConstraintValidator<NonNegative, Integer> {
     @Override
