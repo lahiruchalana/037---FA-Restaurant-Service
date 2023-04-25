@@ -1,5 +1,6 @@
 package com.example.restaurant_service.exceptions.handler;
 
+import com.example.restaurant_service.exceptions.CustomException;
 import com.example.restaurant_service.exceptions.DataExistingException;
 import com.example.restaurant_service.exceptions.InvalidInputException;
 import com.example.restaurant_service.exceptions.NoDataAvailableException;
@@ -28,6 +29,13 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(InvalidInputException.class)
     public ResponseEntity<Object> handleInvalidInputException(InvalidInputException e) {
+        CommonExceptionModel commonExceptionModel = new CommonExceptionModel(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage(), "data.invalid-input");
+
+        return new ResponseEntity<>(commonExceptionModel, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(CustomException.class)
+    public ResponseEntity<Object> handleCustomException(CustomException e) {
         CommonExceptionModel commonExceptionModel = new CommonExceptionModel(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage(), "data.invalid-input");
 
         return new ResponseEntity<>(commonExceptionModel, HttpStatus.INTERNAL_SERVER_ERROR);
