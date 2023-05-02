@@ -29,7 +29,7 @@ public class RestaurantType {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(mappedBy = "restaurant_type")
+    @ManyToMany(mappedBy = "restaurantTypeSet")
     private Set<Restaurant> restaurantSet = new HashSet<>();
 
     @CreationTimestamp
