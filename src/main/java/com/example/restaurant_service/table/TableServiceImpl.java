@@ -4,6 +4,7 @@ import com.example.restaurant_service.dto.RestaurantTypeDTO;
 import com.example.restaurant_service.dto.TableDTO;
 import com.example.restaurant_service.exceptions.CustomException;
 import com.example.restaurant_service.mapper.RestaurantTypeMapper;
+import com.example.restaurant_service.mapper.TableMapper;
 import com.example.restaurant_service.restauranttype.RestaurantType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,14 +25,14 @@ public class TableServiceImpl implements TableService {
         TableDTO tableDTOSaved;
         try {
             log.info ("LOG :: TableServiceImpl addOrUpdateTable() inside try");
-            RestaurantType restaurantType = RestaurantTypeMapper.mapDTOToEntity(restaurantTypeDTO);
-            RestaurantType restaurantTypeSaved = restaurantTypeRepository.save(restaurantType);
-            restaurantTypeDTOSaved = RestaurantTypeMapper.mapEntityToDto(restaurantTypeSaved);
+            Table table = TableMapper.mapDTOToEntity(tableDTO);
+            Table tableSaved = tableRepository.save(table);
+            tableDTOSaved = TableMapper.mapEntityToDto(tableSaved);
         } catch (Exception e) {
             log.info ("LOG :: TableServiceImpl addOrUpdateTable() inside catch");
             throw new CustomException("An error occurred while handling the exception: " + e.getMessage());
         }
-        return restaurantTypeDTOSaved;
+        return tableDTOSaved;
     }
 
 }
