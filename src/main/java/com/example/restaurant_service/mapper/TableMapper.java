@@ -11,6 +11,8 @@ public class TableMapper {
         tableDto.setName(table.getName());
         tableDto.setAvgMaxPrice(table.getAvgMaxPrice());
         tableDto.setAvgMinPrice(table.getAvgMinPrice());
+        tableDto.setCreatedDate(table.getCreatedDate());
+        tableDto.setUpdatedDate(table.getUpdatedDate());
         return tableDto;
     }
 
@@ -20,6 +22,8 @@ public class TableMapper {
         table.setName(tableDto.getName());
         table.setAvgMaxPrice(tableDto.getAvgMaxPrice());
         table.setAvgMinPrice(tableDto.getAvgMinPrice());
+        table.setCreatedDate(tableDto.getCreatedDate());
+        table.setUpdatedDate(tableDto.getUpdatedDate());
         return table;
     }
 }
