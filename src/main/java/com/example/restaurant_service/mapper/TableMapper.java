@@ -11,6 +11,10 @@ public class TableMapper {
         tableDto.setName(table.getName());
         tableDto.setAvgMaxPrice(table.getAvgMaxPrice());
         tableDto.setAvgMinPrice(table.getAvgMinPrice());
+        tableDto.setRestaurant(table.getRestaurant());
+        tableDto.setNumberOfChairs(table.getNumberOfChairs());
+        tableDto.setView(table.getView());
+        tableDto.setImageSet(table.getImageSet());
         tableDto.setCreatedDate(table.getCreatedDate());
         tableDto.setUpdatedDate(table.getUpdatedDate());
         return tableDto;
@@ -22,6 +26,10 @@ public class TableMapper {
         table.setName(tableDto.getName());
         table.setAvgMaxPrice(tableDto.getAvgMaxPrice());
         table.setAvgMinPrice(tableDto.getAvgMinPrice());
+        table.setRestaurant(tableDto.getRestaurant());
+        table.setNumberOfChairs(tableDto.getNumberOfChairs());
+        table.setView(tableDto.getView());
+        table.setImageSet(tableDto.getImageSet());
         table.setCreatedDate(tableDto.getCreatedDate());
         table.setUpdatedDate(tableDto.getUpdatedDate());
         return table;

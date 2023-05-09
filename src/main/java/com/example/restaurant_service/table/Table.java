@@ -1,5 +1,6 @@
 package com.example.restaurant_service.table;
 
+import com.example.restaurant_service.restaurant.Restaurant;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +10,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -26,12 +29,35 @@ public class Table {
     @Column(name = "name")
     private String name;
 
+    /**
+     * price per person
+     */
     @Column(name = "avg_max_price")
     private Float avgMaxPrice;
 
+    /**
+     * price per person
+     */
     @Column(name = "avg_min_price")
     private Float avgMinPrice;
 
+    @ManyToOne
+    private Restaurant restaurant;
+
+    @Column(name = "number_of_chairs")
+    private Integer numberOfChairs;
+
+    /**
+     * describe the view and other key features - party rooms
+     */
+    @Column(name = "view")
+    private String view;
+
+    /**
+     * image Set String represent the array of urls
+     */
+    @Column(name = "image_set")
+    private String imageSet;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
